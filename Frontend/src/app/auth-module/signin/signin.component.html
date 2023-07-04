@@ -1,0 +1,82 @@
+<div class="outer">
+  <div class="container">
+    <h1>Twisks</h1>
+    <p class="success" *ngIf="show">
+      Your account was temporarily blocked<br />
+      Please login after : {{ daysLeft }} days
+    </p>
+    <div class="inner">
+      <form [formGroup]="signInForm" (ngSubmit)="login()">
+        <input
+          class="formcontrol"
+          type="text"
+          id="email"
+          formControlName="email"
+          placeholder="Enter your email"
+          autocomplete="off"
+        />
+        <div
+          *ngIf="
+            !signInForm.get('email')?.valid &&
+            (signInForm.get('email')?.dirty || signInForm.get('email')?.touched)
+          "
+          class="failed"
+        >
+          <div *ngIf="signInForm.controls['email'].errors?.['required']">
+            Email is required.
+          </div>
+          <div *ngIf="signInForm.get('email')?.errors?.['email']">
+            Invalid email format.
+          </div>
+        </div>
+        <input
+          type="password"
+          id="password"
+          class="formcontrol"
+          formControlName="password"
+          placeholder="Enter your password"
+        />
+        <div
+          *ngIf="
+            signInForm.get('password')?.invalid &&
+            (signInForm.get('password')?.dirty ||
+              signInForm.get('password')?.touched)
+          "
+          class="failed"
+        >
+          <div *ngIf="signInForm.get('password')?.errors?.['required']">
+            Password is required.
+          </div>
+          <div *ngIf="signInForm.controls['password']?.errors?.['minlength']">
+            Password must contain 1 Uppercase 1 Lowercase 1 Number 1 Special
+            character and minimum length of 8 characters
+          </div>
+        </div>
+        <button class="button" type="submit" [disabled]="!signInForm.valid">
+          Log in
+        </button>
+      </form>
+      <div class="or">
+        <div id="hrright"><hr /></div>
+        OR
+        <div id="hrleft"><hr /></div>
+      </div>
+      <div class="link">
+        <asl-google-signin-button #googleButton></asl-google-signin-button>
+        <p>Login with google</p>
+      </div>
+      <small
+        ><a routerLink="/auth/forgotPassword"
+          >Forgotten your password?</a
+        ></small
+      >
+      <br />
+    </div>
+  </div>
+  <div class="container">
+    <p class="bottom">
+      Don't have an account?
+      <b><a routerLink="/auth/signup" id="signup">Sign up</a></b>
+    </p>
+  </div>
+</div>

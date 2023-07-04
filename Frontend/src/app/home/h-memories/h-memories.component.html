@@ -1,0 +1,25 @@
+
+
+<div class="twisks-reminder">
+  <h2 class="title">One Year Ago On This Day!!</h2>
+    <!-- <h2 class="title">Remember this Day?</h2> -->
+  <div class="post-container">
+    <div class="post" >
+      <h4>Spotlight on {{this.memoriesImage.username}}</h4>
+        <div class="line-container">
+        <div class="line"></div>
+      </div><br>
+      <img [src]="imgRetrivalPath+ this.memoriesImage.fileName" alt="Instagram Post">
+      <div class="post-details">
+       <p class="caption">Revisit the moment</p>
+        <p class="caption">Your caption on that day " {{ this.memoriesImage.caption }} !! "</p>
+        <p class="date">Year {{ this.memoriesImage.createdAt.slice(0,4) }}!!</p>
+        <!-- / -->
+
+
+<!-- / -->
+      </div>
+    </div>
+  </div>
+</div>
+

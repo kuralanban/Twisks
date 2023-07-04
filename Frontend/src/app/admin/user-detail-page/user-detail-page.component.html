@@ -1,0 +1,42 @@
+<div class="containers">
+  <div class="barChart p-5">
+    <ng-container *ngFor="let user of individualDetail">
+      <div class="userProfile">
+        <div class="container name">
+          <img src="{{ userDp + user.profilePhoto }}" />
+          <h2>UserName:{{ user.userName }}</h2>
+          <h2>AccountType:{{ user.accountType }}</h2>
+        </div>
+      </div>
+    </ng-container>
+
+    <app-bar-chart-user></app-bar-chart-user>
+  </div>
+  <h1 class="h1" *ngIf="collection.length!=0">Top Post</h1>
+  <div class="savedPosts" *ngIf="collection.length!=0">
+    <div *ngFor="let post of collection">
+      <div class="post">
+        <div class="likes">
+          <span class="material-symbols-outlined"> favorite </span
+          >{{ post.likes }}
+        </div>
+        <div id="post">
+          <img
+            src="{{ postPic + post.fileName }}"
+            alt=""
+            *ngIf="!post.videoFile"
+          />
+          <video
+            [src]="postPic + post.fileName"
+            *ngIf="post.videoFile"
+            autoplay
+            [muted]="true"
+          ></video>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="collection.length == 0">
+    <h2 class="comment">No posts Posted</h2>
+  </div>
+</div>

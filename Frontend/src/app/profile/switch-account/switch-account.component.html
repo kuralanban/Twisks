@@ -1,0 +1,42 @@
+<div class="container" *ngIf="!show">
+  <div class="head">
+    <h2 *ngIf="accountType">Switch to public account?</h2>
+    <h2 *ngIf="!accountType">Switch to private account?</h2>
+  </div>
+  <div class="body">
+    <span class="material-symbols-outlined"> movie </span>
+    <p *ngIf="accountType">
+      Anyone else can see your posts, reels and stories.
+    </p>
+    <p *ngIf="!accountType">
+      Only your followers will be able to see your photos and videos.
+    </p>
+  </div>
+  <div class="switch">
+    <a *ngIf="accountType" (click)="switchAccount('public')"
+      >Switch to public</a
+    >
+    <a *ngIf="!accountType" (click)="switchAccount('private')"
+      >Switch to Private</a
+    >
+  </div>
+  <div class="cancel">
+    <a id="cancel" (click)="closeDialog()">Cancel</a>
+  </div>
+</div>
+
+<div class="container" *ngIf="show">
+  <div>
+    <img src="{{ profilePicRetrival + updateUserDetail.profilePhoto }}" />
+    <p class="description">
+      If you change your mind, you'll have to request to follow
+      <i>{{ updateUserDetail.userName }}</i> again.
+    </p>
+  </div>
+  <div id="unfollow" (click)="unfollow(updateUserDetail._id)">
+    <p>Unfollow</p>
+  </div>
+  <div class="cancel">
+    <a id="cancel" (click)="closeDialog()">Cancel</a>
+  </div>
+</div>

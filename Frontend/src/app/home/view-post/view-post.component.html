@@ -1,0 +1,69 @@
+<div class="viewPostContaioner">
+  <div class="img">
+  <img [src]="imgRetrivalPath+data.fileName" alt="" *ngIf="!data.videoFile">
+  <video [src]="imgRetrivalPath+data.fileName" *ngIf="data.videoFile" autoplay loop></video>
+  </div>
+  <div class="postDetailContainer">
+  <div class="postHeader">
+
+  <img src="{{profileRetrival+ this.data.userDetails[0].profilePhoto}}" alt="">
+      <strong>{{this.data.userDetails[0].userName}}</strong>
+      <span class="material-symbols-outlined" id="more" (click)="openMoreOption(data)" title="more-option" *ngIf="this.data.userDetails[0].userName==username">
+        more_horiz
+        </span>
+  </div>
+  <div class="postCaption">
+  <p>{{this.data.caption}}</p>
+  </div>
+
+  <div class="postComments" *ngIf="commentDetails.length!=0">
+  <div class="comment" *ngFor="let cmt of commentDetails">
+  <div>
+
+  <img src="{{profileRetrival+ cmt.userDetails[0].profilePhoto}}" alt="">
+
+  </div>
+  <div id="comment">
+  <strong>{{cmt.userDetails[0].userName}}</strong>
+  <div id="Commentcontent">
+  <span >{{cmt.comment}}</span>
+  </div>
+  </div>
+  <div id="time">
+  <span >{{getTimeTaken(cmt.createdAt)}}</span>
+  </div>
+  </div>
+  </div>
+  <div *ngIf="commentDetails.length==0||commentDetails==null" id="noComments">
+  <h2>No Comments</h2>
+  </div>
+  <div class="interactionContainer">
+
+  <div class="interactions">
+  <div>
+
+  <span id="likeCount">
+
+  <strong>{{this.data.likes}} likes</strong>
+  </span>
+
+  <br>
+  <span id="daysCount">
+  {{getTimeTaken(this.data.createdAt)}}
+  </span>
+  </div>
+
+  </div>
+  </div>
+  <div class="commentFooter">
+
+  <br>
+  <form [formGroup]="commentForm">
+  <input type="text" formControlName="comment" placeholder="Write a comment" id="inp" #comment autocomplete="off">
+  <input type="submit" value="Post" class="btn" (click)="onSubmitingComment()">
+  </form>
+  </div>
+
+  </div>
+  </div>
+

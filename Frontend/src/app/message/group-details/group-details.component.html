@@ -1,0 +1,67 @@
+
+<div class="groupDetails" *ngFor="let details of groupDetails" #addMemberClass>
+  <div class="firstDiv">
+  <div class="head">
+    <div class="img">
+      <img src="data:image/png;base64,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" alt="">
+    </div>
+     <div class="wholehead">
+
+    <div>
+      <span>  Group Name </span>
+      <strong>{{details.groupName}} </strong>
+
+    </div>
+    <br>
+    <div>
+      <strong>{{details.createdBy}}</strong> <br>
+    </div>
+    <br>
+  </div>
+  </div>
+
+  <strong id="title">Members</strong>
+  <br>
+
+  <div class="members">
+<div *ngFor="let member of memberDetails">
+  <img src="{{profileRetrival+member.profilePhoto}}" alt="" srcset="">
+  <strong>{{member.userName}}</strong>
+  <span *ngIf="member.admin" id="admin">Admin</span>
+</div>
+  </div>
+  <div></div>
+  <div class="addGroup" *ngIf="details.admin==userId">
+    <button class="btn" (click)="addMembers()">Add Members</button>
+  </div>
+</div>
+<div *ngIf="addMember" class="secoundDiv">
+  <strong>Add Participants</strong> <br>
+  <small>Only admin can add others in group</small>
+  <input type="text" (input)="onSearchUsers($event)" placeholder="Search members" id="search">
+
+<div class="membersOfsearch">
+  <div class="listOfUsers">
+    <div *ngIf="searchResult.length != 0">
+      <div class="user" *ngFor="let user of searchResult">
+        <div id="tapToChat">
+          <div class="userDp">
+            <img src="{{userDp+user.profilePhoto}}" alt="" srcset="">
+            <strong>{{ user.name }}</strong> <br>
+            <small *ngIf="user.userName==username" id="you">(You)</small>
+            <button type="submit"  [disabled]="isUserAlreadyMember(user)" (click)="addUsers(user)" class="btn">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="searchResult.length == 0" id="noSearch">
+      <h1>No accounts found</h1>
+    </div>
+  </div>
+
+</div>
+<!-- <div class="buttonDiv">
+</div> -->
+</div>
+</div>

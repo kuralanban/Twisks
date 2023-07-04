@@ -1,0 +1,62 @@
+<div *ngIf="userDetail">
+  <div class="container" *ngIf="!data.show">
+    <div>
+      <img src="{{ profilePicRetrival + userDetail.profilePhoto }}" />
+      <p class="description">
+        Are you sure to unblock <i>{{ userDetail.userName }}</i> ?
+      </p>
+    </div>
+    <div id="unfollow" (click)="unblock()">
+      <p>Unblock</p>
+    </div>
+    <div class="cancel" (click)="close()">
+      <a id="cancel">Cancel</a>
+    </div>
+  </div>
+
+  <div class="container" *ngIf="data.show">
+    <div>
+      <img src="{{ profilePicRetrival + userDetail.profilePhoto }}" />
+      <p class="description">
+        Are you sure to Block <i>{{ userDetail.userName }}</i> ?
+      </p>
+    </div>
+    <div id="unfollow" (click)="block()">
+      <p>Block</p>
+    </div>
+    <div class="cancel" (click)="close()">
+      <a id="cancel">Cancel</a>
+    </div>
+  </div>
+</div>
+<div *ngIf="postDetail">
+  <div class="container" *ngIf="!data.display">
+    <div>
+      <img src="{{ profilePicRetrival + postDetail.fileName }}" />
+      <p class="description">
+        Are you sure to unblock <i>{{ postDetail.userName }}</i> ?
+      </p>
+    </div>
+    <div id="unfollow" (click)="unblockPost()">
+      <p>Unblock</p>
+    </div>
+    <div class="cancel" (click)="close()">
+      <a id="cancel">Cancel</a>
+    </div>
+  </div>
+
+  <div class="container" *ngIf="data.display">
+    <div>
+      <img src="{{ profilePicRetrival + postDetail.fileName }}" />
+      <p class="description">
+        Are you sure to Block <i>{{ postDetail.userName }}</i> ?
+      </p>
+    </div>
+    <div id="unfollow" (click)="blockPost()">
+      <p>Block</p>
+    </div>
+    <div class="cancel" (click)="close()">
+      <a id="cancel">Cancel</a>
+    </div>
+  </div>
+</div>

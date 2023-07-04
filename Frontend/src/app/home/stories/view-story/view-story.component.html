@@ -1,0 +1,30 @@
+<div class="total-story">
+  <div class="story-view" >
+      <div class="user-details">
+        <div class="name-image">
+      <img class="profile-image" [src]="this.storyImage.userProfilePic||homeService.defaultDp" alt="No profile"/>
+      <h4 class="profile-name">{{ this.storyImage.username }}</h4>
+        </div>
+      <div class="story-tim">
+      <h4 class="story-time"> {{getCurrentTime(this.creationTime)}}</h4>
+      </div>
+      <div class="line-main" >
+        <div class="line-container" >
+          <div class="line"></div>
+        </div><br>
+      </div>
+      </div>
+      <div class="storyImage" >
+        <span class="material-symbols-outlined" id="arrow" *ngIf="this.storyImage.file.length!=0 && counter!=0 " (click)="back()">
+          arrow_back_ios
+          </span>
+          <span class="material-symbols-outlined" id="arrowf" *ngIf="this.storyImage.file.length!=0 && (counter+1)!=this.storyImage.file.length" (click)="forward()">
+            arrow_forward_ios
+          </span>
+        <img class="story-image" [src]="imgRetrivalPath + imageData" alt="No image" />
+      </div>
+      <nav class="slide-nav">
+        <div class="slide-thumb"></div>
+      </nav>
+    </div>
+</div>

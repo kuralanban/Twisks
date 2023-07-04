@@ -1,0 +1,84 @@
+.inner-container{
+    width: 1000px;
+    border: 1px solid silver;
+   
+}
+.containers{
+    height: 100%;
+    position: absolute;
+    margin-left: 25%;
+    justify-content: center;
+    
+}
+
+.nav{
+    display: flex;
+    border-bottom: 1px solid rgb(216, 212, 212);
+    position: relative;
+    padding: 10px; 
+}
+.nav-item{
+    position: relative;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    top: 6px;
+    font-size: 25px;
+}
+.filters{
+    position: relative;
+    padding: 10px; 
+    border-bottom: 1px solid rgb(216, 212, 212);
+}
+.filter-items{
+    font-size: 25px;
+    position: relative;
+    text-align: center;
+    top: 6px;
+}
+img{
+    border:5px solid rgb(255, 253, 253);
+    width:70px;
+    height:70px;
+    border-radius: 50%;
+}
+.data-container{
+    border: 2px solid silver;
+    overflow-y: scroll;
+}
+.data{
+    background-color:rgb(238, 247, 247);
+    padding: 10px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    padding-top: 8px;
+}
+.name{
+    font-size: 18px;
+    text-align: left;
+    width: 200px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+.main{
+    display: flex;
+    text-align: center;
+    position: relative;
+    padding-top: 8px;
+}
+.buttons{
+    padding: 25px;
+    cursor: pointer;
+    font-size: 18px;
+    cursor: pointer;
+}
+.nav-item{
+    cursor: pointer;
+}
+.highlighted {
+    color:crimson
+  }
+.post{
+    border-radius: 10%;
+}
