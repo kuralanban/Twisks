@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="heading">
+    <p id="head">
+      Followers
+      <span id="close" class="material-symbols-outlined" (click)="close()">
+        close
+      </span>
+    </p>
+  </div>
+  <hr />
+  <div class="people" *ngIf="followersDetails.length != 0">
+    <div class="main" *ngFor="let user of followersDetails">
+      <img
+        class="profile"
+        src="{{ profilePicRetrival + user.profilePhoto }}"
+        alt=""
+      />
+      <div class="name">
+        <p>
+          {{ user.userName
+          }}<span
+            >.
+            <i
+              id="follow"
+              (click)="follow(user._id)"
+              *ngIf="!user.follow && user._id != activeUser"
+              >Follow</i
+            >
+          </span>
+        </p>
+        <span id="user">
+          {{ user.userName }}
+        </span>
+      </div>
+      <button (click)="remove(user._id)" *ngIf="user._id != activeUser">
+        <b>Remove</b>
+      </button>
+    </div>
+  </div>
+  <div class="people" *ngIf="followersDetails.length == 0">
+    <h1>No followers yet</h1>
+  </div>
+</div>

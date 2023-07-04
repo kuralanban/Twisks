@@ -1,0 +1,152 @@
+.scroll {
+  overflow-y: scroll;
+  max-height: 480px;
+}
+.notifications{
+  margin-top: 10px;
+}
+.headers{
+  display: flex;
+  cursor: pointer;
+  width: 1000px;
+  justify-content: center;
+  align-items: center;
+}
+.headers div{
+  margin-left: 10px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+}
+.noti {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  color: #333;
+  font-weight: 550;
+  text-decoration: none;
+  width: 80%;
+
+}
+.head {
+  display: flex;
+  color: #333;
+  font-weight: 570;
+}
+
+.notification {
+  margin: 5px 0px 5px 200px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  box-shadow: 10px 2px 6px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+}
+.icon {
+  margin-right: 10px;
+}
+.icon i {
+  color: red;
+}
+.text {
+  flex-grow: 1;
+}
+.text p {
+  margin: 0;
+}
+.text a {
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
+}
+.text a:hover {
+  text-decoration: underline;
+}
+.text span {
+  color: #42acc7;
+  font-size: 14px;
+}
+
+p {
+  color: #848181;
+  font-weight: 600;
+}
+.notifications {
+  margin-left: 350px;
+  margin-right: auto;
+  padding: 10px;
+  border: 1px solid #d1d1d1;
+  border-radius: 5px;
+  box-shadow: 0px 2px 6px 10px rgba(0, 0, 0, 0.1);
+ width: 1050px;
+ height: 100%;
+ margin-top: 10px;
+
+}
+
+.fas {
+  color: rgb(25, 183, 240);
+}
+#notiTime{
+  color: #848181;
+}
+#notiImage{
+  height: 50px;
+  margin-left: 150px;
+}
+.noti .text{
+width: 300px;
+}
+.friend {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 10px 2px 6px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  height: 600px;
+  overflow: scroll;
+}
+.friend::-webkit-scrollbar{
+  display: none;
+}
+#notiFollowers
+{
+  height:auto;
+  border: 1px solid #dcdcdc;
+  margin: 5px;
+  border-radius: 5px;
+  display: flex;
+}
+.follow{
+  margin: 5px;
+}
+.follow span{
+  margin-left: 10px;
+}
+.friend img{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+.friend div{
+width: 500px;
+height: 60px;
+ }
+.friend img{
+  position: relative;
+  top: 8px;
+ }
+#followicon{
+  position: relative;
+  top: 30px;
+ }

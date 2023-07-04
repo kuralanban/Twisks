@@ -1,0 +1,25 @@
+<!-- adding story by the user  -->
+<div class="storiesContainer">
+ <div>
+  
+  <div class="story">
+    <div (click)="openCreateStoryComponent()" class="post-story">
+    <img src="{{profileRetrival+ userDp}}"alt="" />
+    <span class="material-symbols-outlined " id="addStory"> add_circle </span>
+    <br/>
+    <small id="addStories">Add story</small>
+    </div>
+  </div>
+</div>
+
+
+<!-- opening particular story  -->
+  <div class="user-story "*ngFor="let user of storyDetails">
+    <div class="view-story" (click)="openViewStoryComponent(user)" [class.viewed]="user.viewed" >
+ <div  class="view-story"  >
+   <img src="{{user.userProfilePic ||homeService.defaultDp }}" alt=""  >
+    <small>{{user.username}}</small>
+    </div>
+   </div>
+
+</div>

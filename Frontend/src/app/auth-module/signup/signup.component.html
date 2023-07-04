@@ -1,0 +1,107 @@
+<form>
+  <div class="signup-page">
+    <div class="signup-form">
+      <h1 class="title">Twisks</h1>
+      <h3 class="head">Sign up to see photos from your friends</h3>
+      <!-- <div class="google btn">
+       <button class="google btn">Log in with Google</button>
+    </div> -->
+      <div>
+        <!-- <h4 class="or">OR</h4> -->
+      </div>
+      <br />
+
+      <form [formGroup]="signupForm" (ngSubmit)="OnSubmit()">
+        <div>
+          <small
+            class="error"
+            *ngIf="
+              !this.signupForm.get('email')?.valid &&
+              signupForm.get('email')?.touched
+            "
+            >*Enter the e-mail Id!!</small
+          >
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+            formControlName="email"
+          />
+        </div>
+
+        <div>
+          <small
+            class="error"
+            *ngIf="
+              !this.signupForm.get('userName')?.valid &&
+              signupForm.get('userName')?.touched
+            "
+            >*Enter the user name!!</small
+          >
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Enter your username"
+            required
+            formControlName="userName"
+          />
+        </div>
+
+        <div>
+          <small
+            class="error"
+            *ngIf="
+              !this.signupForm.get('password')?.valid &&
+              signupForm.get('password')?.touched
+            "
+            >*Enter the password!!</small
+          >
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+            formControlName="password"
+          />
+        </div>
+
+        <p>
+          People who use our service may have uploaded your contact information
+          to Twisks.
+        </p>
+        <p>
+          By signing up, you agree to our <a href="#">Terms</a>,
+          <a href="#">Data Policy</a> and <a href="#">Cookies Policy</a>.
+        </p>
+        <div class="signupButtons">
+          <button class="signupButton" type="submit">Sign Up</button>
+        </div>
+      </form>
+
+      <h2>Have a account? <a class="login" href="#">Login</a></h2>
+    </div>
+  </div>
+</form>
+<footer>
+  <nav>
+    <ul>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Jobs</a></li>
+      <li><a href="#">Help</a></li>
+      <li><a href="#">API</a></li>
+      <li><a href="#">Privacy</a></li>
+      <li><a href="#">Terms</a></li>
+      <li><a href="#">Top Accounts</a></li>
+      <li><a href="#">Hashtags</a></li>
+      <li><a href="#">Locations</a></li>
+    </ul>
+  </nav>
+  <p>&copy; 2023 Twisks, Team.</p>
+</footer>
+
+<!-- </form> -->

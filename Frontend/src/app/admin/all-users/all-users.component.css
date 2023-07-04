@@ -1,0 +1,51 @@
+.userList {
+  display: flex;
+}
+.whole{
+  display: flex;
+  position: absolute;
+  left: 23%;
+ 
+  
+}
+
+.cards img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 5px solid white;
+}
+.cards {
+  width: 30px;
+  height: 30px;
+  margin: 0 10% 20% 10%;
+  margin-left: 40px;
+
+
+}
+.contain {
+
+  width: 1050px;
+  height: 500px;
+
+}
+
+.row {
+  width: 820px;
+  margin-left:12%;
+
+}
+.top{
+  text-align: center;
+}
+.photo{
+ 
+  width:100%;
+  text-align:center;
+  margin-left: 50px;
+}
+
+.name{
+  background-color: antiquewhite;
+    width: 250px;
+}

@@ -1,0 +1,108 @@
+.members{
+  height: 200px;
+  overflow-y: scroll;
+  padding: 5px;
+  width: 100%;
+
+}
+.members img{
+height:50px;
+border-radius: 50%;
+}
+.members div{
+  margin: 3px;
+  width: 100%;
+border-bottom: 1px solid rgb(219, 216, 216);
+
+ }
+.groupDetails{
+  padding: 10px;
+  width: 400px;
+  display: flex;
+  align-items: center;
+
+}
+#title{
+  display: flex;
+  justify-content: center;
+}
+.members::-webkit-scrollbar{
+  display: none;
+}
+.groupDetails p{
+  width: 100%;
+}
+#admin{
+position: relative;
+left: 20px;
+color: rgb(222, 222, 222);
+}
+.groupDetails strong, .groupDetails  span{
+width: 80%;
+}
+.members strong{
+  margin-left: 10px;
+}
+.img img{
+  height: 50px;
+  border-radius: 50%;
+}
+.head{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.wholehead{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.btn{
+  outline: none;
+  border: none;
+  background-color: var(--blue);
+  height: 35px;
+  border-radius: 10px;
+}
+.firstDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  width: 100%;
+}
+.userDp img{
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+.userDp{
+  display: flex;
+  width: 100% ;
+}
+
+#you{
+  position: relative;
+  right: 65px;
+  top: 10px;
+}
+.addMemberClass{
+  width: 100%;
+}
+.secoundDiv{
+  height: 400px;
+  overflow: hidden;
+  text-align: center;
+}
+.secoundDiv small{
+  margin: 5px 1px;
+}
+#search{
+  border: none;
+  outline: none;
+  width: 100%;
+  margin: 5px 1px;
+}

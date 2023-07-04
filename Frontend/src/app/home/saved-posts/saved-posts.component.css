@@ -1,0 +1,40 @@
+.savedPosts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  height: 100%;
+}
+.container{
+  margin: 20px 10px 20px 320px;
+}
+.post {
+  position: relative;
+}
+
+.post:hover {
+  opacity: 0.9;
+}
+
+.post:hover .likes {
+  display: inline;
+}
+.post{
+  height: 250px;
+  width: 250px;
+}
+.post img,.post video {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.likes {
+  position: absolute;
+  top: 120px;
+  left: 110px;
+  color: aliceblue;
+  display: none;
+  padding: 5px;
+  border-radius: 5px;
+}

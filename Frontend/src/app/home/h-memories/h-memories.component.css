@@ -1,0 +1,85 @@
+
+.twisks-reminder {
+  text-align: center;
+  height: 650px;
+  width: 800px;
+/* background-color: #f7f3f3; */
+  background-color: rgb(232, 232, 245);
+
+/* filter: brightness(90%); */
+}
+.twisks-reminder:hover{
+  background-color: rgb(232, 232, 245);
+  filter: brightness(100%);
+
+
+}
+
+.title {
+  font-size: 28px;
+  color: purple;
+  padding: 10px;
+}
+
+.post-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+h4{
+  font-weight: bolder;
+  font-size: 20px;
+}
+.post img {
+  height: 380px;
+  width: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+    transition: transform 0.9s ease;
+
+}
+.post img:hover{
+  transform: scale(1.3);
+
+}
+
+.post-details {
+  margin-top: 10px;
+}
+
+.caption {
+  font-weight: bold;
+}
+
+.date {
+  color: #888;
+  font-size: 15px;
+}
+
+/* / */
+.line-container {
+  width: 500px;
+  height: 7px;
+  background-color: rgba(174, 170, 170, 0.62);
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+
+}
+.line {
+  width: 0;
+  height: 90%;
+  background-color: purple;
+  position: absolute;
+  animation: line-animation 8s linear infinite;
+}
+@keyframes line-animation {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+/* / */

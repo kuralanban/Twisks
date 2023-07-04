@@ -1,0 +1,16 @@
+<div class="webcam">
+  <div *ngIf="!webcamImage">
+    <webcam
+      [trigger]="triggerObservable"
+      [width]="400"
+      [height]="400"
+      (imageCapture)="handleImage($event)"
+    >
+    </webcam>
+  </div>
+  <div class="webbutton" (click)="triggerSnapshot()" *ngIf="!webcamImage">
+    <span id="webspan" class="material-symbols-outlined" title="Take picture">
+      photo_camera
+    </span>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+<div class="container" *ngIf="!show && !profilePhoto">
+  <h1 id="heading">Change profile photo</h1>
+  <span>
+    <p id="upload">Upload photo</p>
+    <input
+      title="Choose a photo"
+      type="file"
+      name="profilePhoto"
+      accept="image/*"
+      (change)="imageUpload($event)"
+    />
+  </span>
+  <p class="upload" (click)="takePhoto()">Take a picture</p>
+  <p id="remove" (click)="removePhoto()">Remove current photo</p>
+  <p id="cancel" (click)="closeDialog()">Cancel</p>
+</div>
+<div *ngIf="profilePhoto" class="container" id="container">
+  <span
+    class="material-symbols-outlined"
+    id="arrow"
+    (click)="uploadProfileImage()"
+  >
+    arrow_forward
+  </span>
+  <img [src]="profilePhoto" id="profileImage" />
+</div>
+
+<div *ngIf="show" class="genderContainer">
+  <h1 id="headingGender">Gender</h1>
+  <form #genderForm="ngForm">
+    <input
+      type="radio"
+      id="male"
+      name="gender"
+      ngModel
+      value="Male"
+      required
+      [(ngModel)]="gender"
+    />
+    <label for="male">Male</label><br />
+    <input
+      type="radio"
+      id="female"
+      name="gender"
+      ngModel
+      [(ngModel)]="gender"
+      value="Female"
+      required
+    />
+    <label for="female">Female</label><br />
+    <input
+      type="radio"
+      id="prefer not to say"
+      name="gender"
+      ngModel
+      [(ngModel)]="gender"
+      required
+      value="Prefer not to say"
+    />
+    <label for="prefer not to say">Prefer not to say</label>
+  </form>
+  <p id="uploadGender" (click)="submit(genderForm)">Done</p>
+</div>
