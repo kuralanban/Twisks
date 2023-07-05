@@ -1,0 +1,32 @@
+<div class="postContainer">
+  <div *ngIf="!selectedImage">
+    <div class="postHeader">
+      <h4>Create your new story here</h4>
+    </div>
+    <div class="postContent">
+      <img src="../../../assets/createPost.png" alt="story image" />
+      <p id="choose">Choose a photo</p> <br />
+        <button class="choosePicsBtn btn">
+          Choose from your Device
+        <input type="file" (change)="onFileSelected($event)" id="hide" />
+      </button>
+    </div>
+  </div>
+</div>
+
+
+ <div *ngIf="selectedImage" class="uploads">
+      <div class="postHeader">
+        <span class="material-symbols-outlined back"(click)="discardStory()"title="back">keyboard_backspace</span>
+        <h4 id="upload">Upload Story</h4>
+        <span id="next" (click)="onSharingTheStory()">Share to story</span>
+      </div>
+      <div class="postContent">
+        <img [src]="selectedImage" alt="couldn't load img" id="userUploadedImg" />
+
+      </div>
+ </div>
+
+
+<div>
+</div>

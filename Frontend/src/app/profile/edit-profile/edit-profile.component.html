@@ -1,0 +1,75 @@
+<div class="container" *ngFor="let user of userDetails">
+  <h1>Edit Profile</h1>
+  <hr />
+  <div class="head">
+    <img
+    src="{{profilePicRetrival+user.profilePhoto}}" />
+    <div class="description">
+      <p>{{ user.userName }}</p>
+      <span id="photo" (click)="changeProfile()"> Change profile photo </span>
+    </div>
+  </div>
+  <div class="body">
+    <form #userDetailsForm="ngForm" (ngSubmit)="onSubmit(userDetailsForm)">
+      <div class="data">
+        <h2 id="heading">Bio</h2>
+        <textarea
+          id="input"
+          maxlength="150"
+          name="bioDetails"
+          [(ngModel)]="bioDetails"
+        ></textarea>
+      </div>
+      <div class="data">
+        <h2 id="heading">Name</h2>
+        <input
+          id="input"
+          type="text"
+          name="name"
+          [(ngModel)]="name"
+        >
+      </div>
+      <div class="data">
+        <h2 id="heading">Gender</h2>
+        <input
+          id="input"
+          type="text"
+          name="gender"
+          [(ngModel)]="genderValue"
+          (click)="gender()"
+        />
+      </div>
+      <div class="data">
+        <h2 id="heading">Date of birth</h2>
+        <input
+          id="input"
+          type="date"
+          name="dob"
+          [(ngModel)]="selectedDate"
+          required
+        />
+      </div>
+      <button type="submit" class="button">Submit</button>
+    </form>
+  </div>
+  <hr />
+  <div>
+    <h2>Who can see your content</h2>
+    <p class="subhead">Account privacy</p>
+    <div class="account">
+      <mat-checkbox
+        [color]="color"
+        [checked]="private"
+        (click)="accountType()"
+      ></mat-checkbox>
+      <p id="actype">Private account</p>
+    </div>
+    <p class="subdescription">
+      When your account is public, your profile and posts can be seen by anyone,
+      on or off Twisks, even if they don't have an Twisks account.<br /><br />
+      When your account is private, only the followers that you approve can see
+      what you share, including your photos or videos, and your followers and
+      following lists.
+    </p>
+  </div>
+</div>

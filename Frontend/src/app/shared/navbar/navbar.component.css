@@ -1,0 +1,154 @@
+.navAdmin{
+
+  position: absolute;
+}
+
+
+
+.nav{
+  padding: 5px;
+  width: 250px;
+  border-right: 1px solid rgb(209, 209, 209);
+  position: fixed;
+
+  }
+  .navTitles{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 230px;
+
+  }
+  .navTitles div{
+    transition: 0.4s ease-in-out;
+  }
+  .navTitles div:hover{
+  background-color: rgb(229, 229, 229);
+  border-radius: 10px;
+  transition: 0.4s ease-in-out;
+  transform: scale(1.0);
+  }
+  .navTitles div:hover span{
+    transition: 0.4s ease-in-out;
+  transform: scale(1.1);
+  }
+  .navTitles span{
+    cursor: pointer;
+    margin: 15px;
+  }
+  .navTitles strong{
+    cursor: pointer;
+    position: relative;
+    bottom: 7px;
+  }
+  #profilepic{
+    width: 33px;
+    height: 30px;
+    border-radius: 50%;
+    position: relative;
+    left: 10px;
+    top: 5px;
+  }
+  #profile{
+    position: relative;
+    top: 5px;
+    left: 18px;
+  }
+  .lastNavItem{
+    margin-top: 100px;
+  }
+  #logoImage{
+    height: 40px;
+    width: 40px;
+    position: relative;
+    top: 40px;
+    left:90px;
+  }
+  #logo{
+    font-family: 'Billabong', sans-serif;
+    position: relative;
+    left: 20px;
+  }
+  .profileDiv{
+    height: 50px;
+    position: relative;
+    left: 1px;
+  }
+#image{
+  height: 50px;
+  width: 50px;
+  top: 40px;
+  left:90px;
+  border-radius: 50%;
+}
+.navPage{
+  border:solid black 2px;
+  width:300px;
+  height:500px;
+}
+
+.border{
+  width:300px;
+  height: 900px;
+}
+.container{
+  margin-left:5px;
+
+}
+.center{
+
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120vh;
+  flex-direction: column;
+  margin-left: 25%
+
+}
+#image{
+  height: 150px;
+  width: 150px;
+  position: relative;
+  top: 20px;
+  left:40px;
+  border-radius: 50%;
+  border: 2px solid rgb(193, 193, 193);
+}
+
+.container-color{
+
+  background-color: rgb(194, 193, 193);
+
+}
+.name{
+  margin-top: 40px;
+  margin-left: 80px;
+}
+.logout{
+  font-weight:600;
+  font-size: 30px;
+  position: relative;
+  top: 5px;
+  margin-left: 3px;
+}
+/* .nav-dashboard:hover{
+  background-color: rgb(118, 111, 111);
+  border-radius: 10px;
+  transition: 0.4s ease-in-out;
+  transform: scale(1.0);
+}
+
+} */
+.highlight{
+  color:crimson;
+
+}
+.nav-dashboard{
+  cursor:pointer
+}
+#profie{
+  text-decoration: none;
+
+  color: black;
+}

@@ -1,0 +1,36 @@
+<div class="whole">
+  <div class="total">
+    <div class="popular" id="popularity">
+      <h2 class="photo">#Top 4 Post</h2>
+      <app-post-with-popularity></app-post-with-popularity>
+    </div>
+    <div class="contain">
+      <div class="userList">
+        <div class="user">
+          <div class="my-5">
+            <div class="row">
+              <h2 class="top"><i>#Top 10 Users</i></h2>
+              <ng-container>
+                <div class="cards" *ngFor="let list of allUser">
+                  <div>
+                    <h3 class="name">{{ list.userName }}</h3>
+
+                    <div class="img">
+                      <img
+                        class="ribbon"
+                        src="{{ profilePicRetrival + list.profilePhoto }}"
+                        (click)="passId(list._id)"
+                        alt="image"
+                      />
+
+                    </div>
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

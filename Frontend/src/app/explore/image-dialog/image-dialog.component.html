@@ -1,0 +1,10 @@
+
+<div class="explore-page">
+  <header class="explore-header">
+    <h1 class="explore-title">Your explore</h1>
+  </header>
+  <div class="image-container">
+    <img [src]="retrival+data.imageUrl.fileName" alt="Image"  *ngIf="!data.imageUrl.videoFile" />
+    <video [src]="retrival+data.imageUrl.fileName" *ngIf="data.imageUrl.videoFile" autoplay ></video>
+  </div>
+</div>

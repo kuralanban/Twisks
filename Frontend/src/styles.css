@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+/* @import "../node_modules/bootstrap/dist/css/bootstrap.min.css"; */
+
+:root
+{
+  --blue:rgb(0, 179, 255);
+}
+app-user-detail-page{
+  width:1500px;
+
+}
+::ng-deep .my-custom-snackbar {
+  background: #1abc9c;
+  color     : blue;
+}
+html {
+  scroll-behavior: smooth;
+}

@@ -1,0 +1,67 @@
+
+
+.story img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+.post-story,.view-story{
+    cursor: pointer;
+
+}
+.storiesContainer {
+  width: 500px;
+  display: flex;
+  overflow-x: scroll;
+  /* padding: 10px; */
+}
+.storiesContainer::-webkit-scrollbar {
+  display: none;
+}
+.story {
+  margin: 5px;
+
+}
+
+
+
+#addStory {
+  font-size: medium;
+  color: white;
+  background-color: var(--blue);
+  border-radius: 10px;
+  position: relative;
+  top: 25px;
+  right: 22px;
+  /* left: 0px; */
+}
+
+.liked {
+  color: rgb(234, 52, 52);
+}
+/*  */
+.user-story {
+  margin: 1px;
+  background : linear-gradient(100deg, #e185f4, rgb(6, 209, 142));
+  /* background: rgb(62, 194, 30); */
+ /* background : linear-gradient(100deg, #8410ab, rgb(229, 202, 234)); */
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  /* background-color: green; */
+}
+
+
+ img{
+    height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+.viewed {
+  background: linear-gradient(100deg, #dcdfda, rgb(211, 213, 212));
+  height:60px;
+  width: 60px;
+  border-radius: 50%;
+    /* margin: 5px; */
+
+}

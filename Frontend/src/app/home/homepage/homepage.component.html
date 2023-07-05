@@ -1,0 +1,118 @@
+<div class="homepage">
+  <div class="content">
+    <app-stories></app-stories>
+  <div class="postMainContainer">
+    <div class="postContainer" *ngFor="let user of postDetails">
+      <div class="post">
+        <div class="postHeader">
+          <img
+            src="{{profileRetrival+ user.userDetails[0].profilePhoto }}"
+            alt=""/>
+          <strong>{{ user.userDetails[0].userName }}</strong>
+          <div>
+            <span
+              class="material-symbols-outlined"
+              id="more"
+              (click)="openMoreOption(user._id)"
+            >
+              more_horiz
+            </span>
+          </div>
+        </div>
+        <div class="postImage">
+          <img
+            [src]="imgRetrivalPath + user.fileName"
+            alt=""
+            srcset=""
+            *ngIf="!user.videoFile"
+          />
+          <video [src]="imgRetrivalPath+user.fileName" *ngIf="user.videoFile" [muted]="true" autoplay></video>
+        </div>
+
+        <div class="footer">
+          <div class="interactions">
+            <span
+              class="material-icons"
+              (click)="likePost(user)"
+              #like
+              id="like"
+              [style.color]="user.likeColor"
+            >
+              {{ user.likeStatus }}
+            </span>
+            <span class="material-symbols-outlined" (click)="viewPost(user)" style="color: black;">
+              chat_bubble
+            </span>
+            <span class="material-icons" (click)="onSavingPost(user)" style="color: black;">
+              {{ user.saveStatus }}
+            </span>
+          </div>
+          <strong class="likeCount">{{ user.likes }} likes</strong>
+          <p>{{ user.caption }}</p>
+          <span (click)="viewPost(user)" id="viewComments"
+            >View all comments</span
+          >
+          <br />
+          {{ getTimeTaken(user.createdAt) }}
+        </div>
+      </div>
+      <br />
+      <br />
+    </div>
+  </div>
+  </div>
+
+
+  <div class="accountSwitch">
+    <div class="account">
+      <img
+        src="{{this.userDp}}"
+        alt=""
+      />
+      <strong>{{ this.username }}</strong>
+
+
+      <br />
+      <div class="spotlight">
+        <header>
+          <h1>Your Memories on Twisks!</h1>
+        </header>
+
+        <div class="memory-grid" >
+          <div *ngIf="memoriesData.length!=0">
+          <div class="memory-card" *ngFor="let memories of memoriesData" (click)="onClickMemories(memories)"  >
+            <img class="memories-image" src="{{imgRetrivalPath+ memories.fileName}}" alt="memories images" />
+            <div class="memory-details">
+              <h3>Memories from  {{memories.createdAt.slice(0,10)}}</h3>
+            </div>
+          </div>
+          <br>
+          <div class="caughtup">
+
+            <h2 class="end">You all caught up {{ this.username }}, Thankyou.</h2>
+          </div>
+        </div>
+        <div *ngIf="memoriesData.length==0">
+
+          <br>
+          <div class="caughtup">
+
+            <h2 class="end">You have no memoeries Today</h2>
+
+          </div>
+        </div>
+      </div>
+      </div>
+      <div>
+        <div class="Accountfooter">
+          <p>About</p>
+          <p>Help</p>
+          <p>Privacy</p>
+          <p>Teams</p>
+          <p>Locations</p>
+        </div>
+        <p>&#169; 2023 Twisks</p>
+      </div>
+    </div>
+  </div>
+</div>
