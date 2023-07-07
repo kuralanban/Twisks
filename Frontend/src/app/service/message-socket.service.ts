@@ -14,7 +14,7 @@ export class MessageSocketService {
   constructor(private http: HttpClient) {}
 
   public Connect(){
-    this.socket = io('http://localhost:3000');
+    this.socket = io(`${environment.baseUrl}`);
   }
 
   public searchUsers(accountName: string) {
