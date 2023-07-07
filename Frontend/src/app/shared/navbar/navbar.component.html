@@ -18,29 +18,29 @@
       <span class="material-symbols-outlined"> explore </span>
       <strong>Explore</strong>
     </div>
-    <a href="/message" id="profie">
- <div>
+    <!-- <a href="/message" id="profie"> -->
+ <div (click)="routeToMessage()">
       <span class="material-symbols-outlined"> mail </span>
       <strong>Message</strong>
     </div>
-    </a>
-<a href="/notification" id="profie">
-  <div>
+    <!-- </a> -->
+<!-- <a href="/notification" id="profie"> -->
+  <div (click)="routeToNotification()">
     <span class="material-symbols-outlined"> favorite </span>
     <strong>Notifications</strong>
   </div>
-</a>
+<!-- </a> -->
     <div (click)="openCreatePostComponent()">
       <span class="material-symbols-outlined"> add_circle </span>
       <strong>Create Post</strong>
     </div>
     <!-- <mat-dialog-content></mat-dialog-content> -->
-    <a href="profile/home/{{userId}}" id="profie">
-      <div class="profileDiv">
+    <!-- <a href="profile/home/{{userId}}" id="profie"> -->
+      <div class="profileDiv" (click)="routeToProfile()">
       <img [src]=" imgRetrival+ userDp" alt="" id="profilepic">
       <strong id="profile">Profile</strong>
     </div>
-    </a>
+    <!-- </a> -->
 
     <div class="lastNavItem" (click)="openMoreOptionsComponent()">
       <span class="material-symbols-outlined">

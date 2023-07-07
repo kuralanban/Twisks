@@ -12,7 +12,7 @@ export class WebsocketService {
 
 
   public connectSockets() {
-    this.socket = io('http://localhost:3000', {
+    this.socket = io(`${environment.baseUrl}`, {
       transports: ['websocket'], // Only use the WebSocket transport
       reconnectionAttempts: 3, // Number of reconnection attempts
       timeout: 5000, // Connection timeout in milliseconds
