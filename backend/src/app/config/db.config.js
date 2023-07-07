@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 mongoose
-  .connect("mongodb://localhost:27017", {
+  .connect("mongodb+srv://kuralanban:Dumbbells%235@twisksdb.scff0oc.mongodb.net/", {
     dbName: "twisks_db",
     useNewUrlParser: true,
     useUnifiedTopology: true,

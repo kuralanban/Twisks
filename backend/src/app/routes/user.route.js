@@ -12,7 +12,7 @@ const upload = multer({ storage });
 module.exports = (app) => {
   const decode = require("../middleware/decode.middleware.js");
 
-  const authrorize = require("../middleware/authorize.middleware");
+  const authrorize = require("../middleware/authorize.middleware.js");
 
   var router = require("express").Router();
 

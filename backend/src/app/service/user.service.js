@@ -1,6 +1,6 @@
 const db = require("../models");
 const User = db.user;
-const allUserService=require("../service/allUser.service")
+const allUserService=require("./allUser.service")
 module.exports = {
   fetchUserDetailservice: async (userId) => {
     try {

@@ -2,7 +2,7 @@ const { blockedMailMiddleware, unblockedMailMiddleware } = require("../middlewar
 const db = require("../models");
 const User = db.user;
 const Post = db.post;
-const allUserService=require("../service/allUser.service")
+const allUserService=require("./allUser.service")
 module.exports = {
   fetchAllUser: async () => {
     try {
