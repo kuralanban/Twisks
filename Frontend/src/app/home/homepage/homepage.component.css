@@ -278,4 +278,8 @@ header h1 {
   color: rgb(0, 167, 208);
 }
 
-
+@media only screen and (max-width: 1200px) {
+  .content {
+    margin-left: 10px;
+  }
+}

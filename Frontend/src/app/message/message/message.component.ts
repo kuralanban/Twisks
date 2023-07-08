@@ -6,12 +6,26 @@ import { MessageSocketService } from 'src/app/service/message-socket.service';
 import { CreateGroupComponent } from '../create-group/create-group.component';
 import { GroupDetailsComponent } from '../group-details/group-details.component';
 import { WebsocketService } from 'src/app/service/websocket.service';
-
+import { trigger, state, style, animate, transition } from '@angular/animations';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-message',
   templateUrl: './message.component.html',
-  styleUrls: ['./message.component.css']
+  styleUrls: ['./message.component.css'],
+  animations: [
+    trigger('slideInOut', [
+      state('in', style({
+        transform: 'translateX(0)'
+      })),
+      state('out', style({
+        transform: 'translateX(-100%)'
+      })),
+      transition('in => out', animate('200ms ease-in')),
+      transition('out => in', animate('200ms ease-out'))
+    ])
+  ]
+
 })
 export class MessageComponent implements OnInit {
   public searchResult: Array<any> = [];
@@ -30,6 +44,8 @@ export class MessageComponent implements OnInit {
   public userDp = environment.profilePicRetrival;
   public isGroupChat: boolean = false;
   public isPrivateChat: boolean = false;
+  public isMobileScreen: boolean = false;
+  public  isSidebarOpen: boolean = true;
 
   @ViewChild('messageContainer') messageContainer!: ElementRef;
 
@@ -39,12 +55,14 @@ export class MessageComponent implements OnInit {
 
   constructor(
     public messageService: MessageSocketService,
-    public websocket:WebsocketService,
+    public websocket: WebsocketService,
     private fb: FormBuilder,
     public dialog: MatDialog,
+    public notification:MatSnackBar
   ) {}
   ngOnInit(): void {
-    this.websocket.connectSockets();
+    this.messageService.Connect();
+    this.onMobileScreen();
     this.retriveAllgroups();
     this.onRetrivingGroupsInitally();
   }
@@ -64,6 +82,7 @@ export class MessageComponent implements OnInit {
       senderuserId: this.userId,
       reciveruserId: user._id
     };
+    this.messageService.Connect();
     // To check room already created else creates a new one and send its _id
     this.messageService.connectChatRoom(data);
     // By retriving its _id on subs this socket method
@@ -82,6 +101,8 @@ export class MessageComponent implements OnInit {
             this.isGroupChat = false;
             this.privateChat = [user];
             this.messages = data;
+            this.onMobileScreen();
+            this.notification.open('slide the chat box and chat','close', { duration: 5000 })
           },
           error: () => {}
         });
@@ -107,13 +128,11 @@ export class MessageComponent implements OnInit {
     });
   }
 
-
   public createGroup(): void {
     const dialogRef = this.dialog.open(CreateGroupComponent, {
       panelClass: 'center-dialog'
     });
     dialogRef.afterClosed().subscribe(result => {
-
       this.onRetrivingGroupsInitally();
     });
   }
@@ -149,6 +168,7 @@ export class MessageComponent implements OnInit {
         this.isPrivateChat = false;
         this.groupChat = [group];
         this.messages = data.message;
+        this.notification.open('slide the chat box on the top start chatting','close', { duration: 5000 })
       },
       error: () => {}
     });
@@ -165,9 +185,18 @@ export class MessageComponent implements OnInit {
       this.messages = data.message;
     });
   }
-  public showGroupDetails(data:any){
+  public showGroupDetails(data: any) {
     const dialogRef = this.dialog.open(GroupDetailsComponent, { data: data });
-    dialogRef.afterClosed().subscribe(result => {
-    });
+    dialogRef.afterClosed().subscribe(result => {});
+  }
+  public onMobileScreen() {
+    if (window.screen.width <= 768) {
+      this.isMobileScreen = true;
+    } else {
+      this.isMobileScreen = false;
+    }
+  }
+  public toggleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen;
   }
 }

@@ -78,7 +78,7 @@
   <h4 style="color: grey;">When {{ userDetails.userName }} shares photos and videos you'll see them here.</h4>
     </div>
       <div class="savedPosts" *ngIf="activeUserPosts.length!=0">
-        <div *ngFor="let post of activeUserPosts">
+        <div *ngFor="let post of activeUserPosts" class="loopPost">
           <div class="post">
             <div class="likes">
               <span class="material-symbols-outlined"> favorite </span

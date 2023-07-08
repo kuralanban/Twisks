@@ -131,3 +131,22 @@ img {
     padding: 5px;
     border-radius: 5px;
   }
+  @media only screen and (max-width: 1200px) {
+.savedPosts{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* align-items: center; */
+}
+/* .loopPost{
+  height: 100px;
+  width: 100px;
+} */
+.profile img{
+  height: 50px;
+}
+.post img{
+  height: 200px;
+  width: 200px;
+
+}
+  }
