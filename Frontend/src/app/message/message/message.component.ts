@@ -5,6 +5,7 @@ import { environment } from 'src/app/environments/environment';
 import { MessageSocketService } from 'src/app/service/message-socket.service';
 import { CreateGroupComponent } from '../create-group/create-group.component';
 import { GroupDetailsComponent } from '../group-details/group-details.component';
+import { WebsocketService } from 'src/app/service/websocket.service';
 
 
 @Component({
@@ -38,11 +39,12 @@ export class MessageComponent implements OnInit {
 
   constructor(
     public messageService: MessageSocketService,
+    public websocket:WebsocketService,
     private fb: FormBuilder,
     public dialog: MatDialog,
   ) {}
   ngOnInit(): void {
-    this.messageService.Connect();
+    this.websocket.connectSockets();
     this.retriveAllgroups();
     this.onRetrivingGroupsInitally();
   }
