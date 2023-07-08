@@ -172,8 +172,7 @@
     height: 150px;
     border-right: 1px solid rgb(209, 209, 209);
     position: fixed;
-    /* top: 800px; */
-    bottom: 100px;
+    top: 800px;
     right: 23px;
     }
     #logo{
