@@ -13,7 +13,7 @@
     margin-left: 10px;
   }
   .whole {
-  height: 896px;
-  overflow: hidden;
+  height: 100%;
+  /* overflow: hidden; */
   }
 }
