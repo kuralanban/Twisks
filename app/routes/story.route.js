@@ -26,7 +26,9 @@ module.exports= (app)=>{
       const response = await drive.files.create({
         requestBody: {
           name: file.filename,
-          mimeType: 'image/jpg'
+          mimeType: 'image/jpg',
+        parents: ["1YoL6KV9bjG8XBEszustMiIekvSiSjWz_"]
+
         },
         media: {
           mimeType: 'image/jpg',
