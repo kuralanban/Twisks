@@ -25,7 +25,7 @@
       No recent searches.
     </p>
     <div class="main" *ngFor="let user of recentSearchUserDetails">
-      <img src="{{ profilePicRetrival + user.profilePhoto }}" />
+      <img src="{{user.profilePhoto }}" />
       <div class="name" (click)="viewUserProfileOfRecentUser(user._id)">
         <p>{{ user.userName }}</p>
         <span id="user">{{ user.name }}</span>
@@ -34,7 +34,7 @@
   </div>
   <div class="details" *ngIf="search">
     <div class="main" *ngFor="let user of userDetail">
-      <img src="{{ profilePicRetrival + user.profilePhoto }}" />
+      <img src="{{user.profilePhoto }}" />
       <div class="name" (click)="viewUserProfile(user._id)">
         <p>{{ user.userName }}</p>
         <span id="user">{{ user.name }}</span>

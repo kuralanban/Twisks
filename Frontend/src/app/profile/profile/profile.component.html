@@ -3,7 +3,7 @@
     <div>
       <img
         class="profile"
-        src="{{ profilePicRetrival + userDetails.profilePhoto }}"
+        src="{{userDetails.profilePhoto }}"
       />
     </div>
     <div class="datas">
@@ -86,13 +86,13 @@
             </div>
             <div id="post">
               <img
-                src="{{ imgRetrival + post.fileName }}"
+                src="{{post.fileUrl}}"
                 alt=""
                 (click)="viewPost(post)"
                 *ngIf="!post.videoFile"
               />
               <video
-                [src]="imgRetrival + post.fileName"
+                [src]="post.fileUrl"
                 *ngIf="post.videoFile"
                 autoplay
                 [muted]="true"

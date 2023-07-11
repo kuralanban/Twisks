@@ -12,7 +12,7 @@
         <div class="user" *ngFor="let user of searchResult">
           <div id="tapToChat">
             <div class="userDp">
-              <img src="{{userDp+user.profilePhoto}}" alt="" srcset="">
+              <img src="{{user.profilePhoto}}" alt="" srcset="">
               <strong>{{ user.name }}</strong> <br>
               <small *ngIf="user.userName==username" id="you">(You)</small>
             </div>

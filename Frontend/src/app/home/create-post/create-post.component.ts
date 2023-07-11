@@ -99,7 +99,9 @@ export class CreatePostComponent implements OnInit {
         window.location.reload();
       },
       error: (err) => {
-        this.notification.open(err);
+        this.notification.open(err.message);
+        console.log(err);
+
       },
     });
 

@@ -29,7 +29,7 @@ export class HomepageComponent {
   public commentDetails: Array<object> = [];
   public memoriesData: Array<any> = [];
   public profileRetrival = environment.profilePicRetrival;
-  public userDp: string =environment.profilePicRetrival + sessionStorage.getItem('userDp')!;
+  public userDp: string =sessionStorage.getItem('userDp')!;
 
   ngOnInit() {
     this.fetchUserFollowingPosts();
@@ -125,7 +125,6 @@ export class HomepageComponent {
       panelClass: ['custom-snackbar'], // Custom CSS class for styling
       data: { image: `${user.fileName}` } // Additional data, in this case, the path to the image
     };
-    this.notification.open('')
     this.fetchUserFollowingPosts();
   }
 

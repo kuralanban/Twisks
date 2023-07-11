@@ -154,6 +154,8 @@ export class ProfileComponent implements OnInit {
             a.saveStatus = 'bookmark_border';
           }
         });
+        console.log(this.activeUserPosts);
+
       },
       error: () => {}
     });

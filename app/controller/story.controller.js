@@ -8,7 +8,7 @@ module.exports = {
     const story = { ...req.file, ...req.body };
     // console.log("your merge request is ",story);
     try {
-      const addStory = await storyService.saveNewStory(story, res);
+      const addStory = await storyService.saveNewStory(req, res);
       return addStory;
     } catch (error) {
       return res.status(400).json({

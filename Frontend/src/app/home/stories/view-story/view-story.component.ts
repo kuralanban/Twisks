@@ -20,15 +20,16 @@ export class ViewStoryComponent {
   public storyImage: any;
   public creationTime: any;
   ngOnInit() {
-    
+
     this.storyImage = this.storyData.story;
-    this.file = this.storyImage.file.slice().reverse(); 
+    this.file = this.storyImage.file.slice().reverse();
     this.imageData = this.file[this.counter].filename;
     this.creationTime = this.file[this.counter].createdAt;
+    console.log("kjhgfdsdfgh",this.storyData);
 
     setInterval(() => {
-      this.counter = (this.counter + 1) % this.file.length; 
-      this.imageData = this.file[this.counter].filename; 
+      this.counter = (this.counter + 1) % this.file.length;
+      this.imageData = this.file[this.counter].filename;
       this.creationTime = this.file[this.counter].createdAt;
     }, 5000);
   }
@@ -37,12 +38,12 @@ export class ViewStoryComponent {
   }
   public back() {
     this.counter = this.counter - 1;
-    this.imageData = this.file[this.counter].filename; 
+    this.imageData = this.file[this.counter].filename;
     this.creationTime = this.file[this.counter].createdAt;
   }
   public forward() {
     this.counter = this.counter + 1;
-    this.imageData = this.file[this.counter].filename; 
+    this.imageData = this.file[this.counter].filename;
     this.creationTime = this.file[this.counter].createdAt;
   }
 }

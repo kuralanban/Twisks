@@ -14,7 +14,7 @@ person_search
 <div class="user" *ngFor="let user of searchResult">
 <div (click)="onPrivatechat(user)" id="tapToChat">
 <div>
-<img src="{{userDp +user.profilePhoto}}" alt="" srcset="" id="profile">
+<img src="{{user.profilePhoto}}" alt="" srcset="" id="profile">
 </div>
 <div id="username">
 <strong>{{user.userName}}</strong> <br>
@@ -80,7 +80,7 @@ forum
 <div *ngFor="let user of privateChat">
 <div class="header">
 <div class="userDp">
-<img src="{{userDp +user.profilePhoto}}" alt="" id="profileH">
+<img src="{{user.profilePhoto}}" alt="" id="profileH">
 <strong id="name">{{user.userName}}
 </strong>
 </div>
@@ -170,7 +170,7 @@ forum
     <div class="user" *ngFor="let user of searchResult">
     <div (click)="onPrivatechat(user)" id="tapToChat">
     <div>
-    <img src="{{userDp +user.profilePhoto}}" alt="" srcset="" id="profile">
+    <img src="{{user.profilePhoto}}" alt="" srcset="" id="profile">
     </div>
     <div id="username">
     <strong>{{user.userName}}</strong> <br>
@@ -228,7 +228,7 @@ forum
 <div *ngFor="let user of privateChat">
 <div class="header">
 <div class="userDp">
-<img src="{{userDp +user.profilePhoto}}" alt="" id="profileH">
+<img src="{{user.profilePhoto}}" alt="" id="profileH">
 <strong id="name">{{user.userName}}
 </strong>
 </div>

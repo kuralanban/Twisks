@@ -5,6 +5,7 @@ module.exports = (mongoose) => {
         caption: { type: String },
         fileName: { type: String },
         likes: { type: Number, default: 0 },
+        fileUrl:{type:String},
         reports:[{
           reportedUserId:{
             type:mongoose.Schema.Types.ObjectId,

@@ -65,7 +65,7 @@ module.exports = {
        {_id:data.userId},
         {
           $set: {
-            profilePhoto: data.fileName,
+            profilePhoto: data.fileUrl,
           },
         },
         {

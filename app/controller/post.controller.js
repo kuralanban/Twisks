@@ -1,18 +1,26 @@
 const postService = require("../service/post.service");
 
-exports.savePostDetails= async (req, res) => {
+exports.savePostDetails = async (req, res) => {
+  try {
+    const data = req.body;
+    data.fileName = req.file.filename;
+    const fileId = req.fileId;
 
-        try{
-            const data=req.body;
-            data.fileName=req.file.filename;
-            console.log("PostDetails: ",data);
-            const postDetails=await postService.saveNewPost(data);
-            if(postDetails){
-            return res.status(200).json({
-            status: 1,
-            message: "Successfully Posted post details!",
-            postDetails: postDetails,
-          })
+    // Construct the Google Drive file URL
+    const fileUrl = `https://drive.google.com/uc?id=${fileId}`;
+    data.fileUrl = fileUrl;
+
+    console.log("fileUrl: ", fileUrl);
+    console.log("file path :", req.file.path);
+    console.log("PostDetails: ", data);
+
+    const postDetails = await postService.saveNewPost(data); // Assuming this function saves the post details
+    if (postDetails) {
+      return res.status(200).json({
+        status: 1,
+        message: "Successfully Posted post details!",
+        postDetails: postDetails,
+      });
     }
   } catch (err) {
     return res.status(400).json({

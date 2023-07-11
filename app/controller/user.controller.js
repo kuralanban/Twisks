@@ -13,7 +13,7 @@ exports.newUser = async (req, res, next) => {
       password: bcrypt.hashSync(req.body.password, 8),
       accountType: "public",
       profilePhoto:
-        "defaultProfile.png",
+        "https://drive.google.com/uc?id=1WCE4nacbnegEaJbnMmPf3gBXxipVhZHo",
     });
     user
       .save(user)
@@ -93,7 +93,7 @@ exports.validateUser = async (req, res) => {
         {
           email: user.email,
           role: "user",
-          userDp:user.profilePhoto
+          userDp:user.fileUrl
         },
         process.env.SECRET_KEY
       );
@@ -295,6 +295,11 @@ exports.uploadProfileImage = async (req, res) => {
   try {
     const data = req.body;
     data.fileName = req.file.filename;
+    const fileId = req.fileId;
+
+    // Construct the Google Drive file URL
+    const fileUrl = `https://drive.google.com/uc?id=${fileId}`;
+    data.fileUrl = fileUrl;
     const uploadProfile = await userService.uploadProfileImage(data, res);
     return res.status(200).json({
       status: 0,

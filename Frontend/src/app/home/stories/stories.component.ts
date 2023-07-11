@@ -18,7 +18,6 @@ export class StoriesComponent {
     public homeService: HomeService
   ) {}
   public imgRetrivalPath: string = 'http://localhost:3000/story/';
-  public profileRetrival=environment.profilePicRetrival;
   public userDp!:string;
   public storyDetails: any;
   public viewed = false;

@@ -1,12 +1,12 @@
 <div class="viewPostContaioner">
   <div class="img">
-  <img [src]="imgRetrivalPath+data.fileName" alt="" *ngIf="!data.videoFile">
-  <video [src]="imgRetrivalPath+data.fileName" *ngIf="data.videoFile" autoplay loop></video>
+  <img [src]="data.fileUrl" alt="" *ngIf="!data.videoFile">
+  <video [src]="data.fileUrl" *ngIf="data.videoFile" autoplay loop></video>
   </div>
   <div class="postDetailContainer">
   <div class="postHeader">
 
-  <img src="{{profileRetrival+ this.data.userDetails[0].profilePhoto}}" alt="">
+  <img src="{{this.data.userDetails[0].profilePhoto}}" alt="">
       <strong>{{this.data.userDetails[0].userName}}</strong>
       <span class="material-symbols-outlined" id="more" (click)="openMoreOption(data)" title="more-option" *ngIf="this.data.userDetails[0].userName==username">
         more_horiz
@@ -20,7 +20,7 @@
   <div class="comment" *ngFor="let cmt of commentDetails">
   <div>
 
-  <img src="{{profileRetrival+ cmt.userDetails[0].profilePhoto}}" alt="">
+  <img src="{{cmt.userDetails[0].profilePhoto}}" alt="">
 
   </div>
   <div id="comment">

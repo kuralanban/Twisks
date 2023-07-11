@@ -3,17 +3,20 @@ const Story = db.story;
 const User = db.user;
 
 module.exports = {
-  saveNewStory: async (storyDetail, res) => {
-    const existedStory= await Story.findOne({userId:storyDetail.userId})
+  saveNewStory: async (req, res) => {
+    const existedStory= await Story.findOne({userId:req.body.userId})
+    const fileId = req.fileId;
+    // Construct the Google Drive file URL
+    const fileUrl = `https://drive.google.com/uc?id=${fileId}`;
     if(!existedStory){
       const story= new Story({
         file:[
           {
-            filename:storyDetail.filename
+            filename:fileUrl
           }
         ],
-        userId:storyDetail.userId,
-        username:storyDetail.username,
+        userId:req.body.userId,
+        username:req.body.username,
       })
       story.save(story).then((data)=>{
         res.send(data)
@@ -26,18 +29,16 @@ module.exports = {
     }
     else{
       try{
-        const addToExistedStory= await Story.findByIdAndUpdate(existedStory._id,
+        const a=await Story.findByIdAndUpdate(existedStory._id,
           {
           $addToSet: {
             file:{
-              filename:storyDetail.filename,
+              filename:fileUrl
             }
           },
         }, { useFindAndModify: false },
         )
-        const twentyFourHoursAgo = new Date();
-         const currentDate=twentyFourHoursAgo.setHours(twentyFourHoursAgo.getHours() );
-      }
+      } 
     catch(error){
       return error.message
     }
