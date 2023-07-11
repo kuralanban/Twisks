@@ -6,7 +6,7 @@
             <ng-container *ngFor="let post of popular">
 
                  <div class="card ">
-                        <img *ngIf="!post.videoFile" src="{{postPic + post.fileName}}" alt="image" />
+                        <img *ngIf="!post.videoFile" src="{{post.fileUrl}}" alt="image" />
                         <video
                         [src]="postPic + post.fileName"
                         *ngIf="post.videoFile"

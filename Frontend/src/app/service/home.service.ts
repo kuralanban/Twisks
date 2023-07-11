@@ -35,6 +35,7 @@ export class HomeService {
   }
   public fetchUserPost(id:any){
     return this.http.get(`${environment.baseUrl}/post/individualPost/${id}`)
+    
   }
   public fetchIndividualPost(id:any){
     return this.http.get(`${environment.baseUrl}/post/singlePost/${id}`)

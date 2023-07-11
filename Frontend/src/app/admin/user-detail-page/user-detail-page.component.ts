@@ -36,7 +36,9 @@ export class UserDetailPageComponent implements OnInit {
   fetchPost() {
     this.homeService.fetchUserPost(this.id).subscribe({
       next: (res: any) => {
+        console.log(res);
         this.collection = res.post;
+        console.log(this.collection);
         this.collection.map((a: any) => {
           a.videoFile = a.fileName.split('.').pop() === 'mp4';
         });

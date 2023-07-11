@@ -23,7 +23,7 @@ app.use("/story", express.static("./public/upload/story"));
 app.use("/profile", express.static("./public/upload/profile"));
 
 app.use(bodyParser.json());
-app.use(express.static('frontend'))
+// app.use(express.static('frontend'))
 app.use(unblockUsersMiddleware);
 
 // Routes !

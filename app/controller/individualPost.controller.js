@@ -1,11 +1,10 @@
-const { log } = require("console");
 const individualPostService=require("../service/individualPost.service")
-const { ObjectId } = require("mongodb");
 module.exports = {
     fetchUserPost:async(req,res)=>{
         try{
             const userId=req.params.userId
             const postOfIndividual=await individualPostService.fetchUserPost(userId);
+            console.log(postOfIndividual);
             return res.status(200).json({
                 status: 1,
                 message:"Successfully retrieved Posts" ,

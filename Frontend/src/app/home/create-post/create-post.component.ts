@@ -96,7 +96,7 @@ export class CreatePostComponent implements OnInit {
 
     this.homeService.createNewPost(this.formData).subscribe({
       next: (data: any) => {
-        window.location.reload();
+    
       },
       error: (err) => {
         this.notification.open(err.message);

@@ -1,8 +1,5 @@
-const { ObjectId } = require("mongodb");
 const db = require("../models");
 const Post = db.post;
-const User = db.user;
-var monthFollowers = Number;
 module.exports = {
     fetchUserPost: async (userId) => {
         try {
@@ -16,13 +13,12 @@ module.exports = {
                 username: 1,
                 caption: 1,
                 filePath: 1,
-                fileName: 1,
+                fileUrl: 1,
                 likes: 1,
               },
             },
             { $project: { userId: 0 } },
           ]);
-         
           return post;
         } catch (error) {
           return error.message;

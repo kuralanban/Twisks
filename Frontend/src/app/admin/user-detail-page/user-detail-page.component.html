@@ -3,7 +3,7 @@
     <ng-container *ngFor="let user of individualDetail">
       <div class="userProfile">
         <div class="container name">
-          <img src="{{ userDp + user.profilePhoto }}" />
+          <img src="{{ user.profilePhoto }}" />
           <h2>UserName:{{ user.userName }}</h2>
           <h2>AccountType:{{ user.accountType }}</h2>
         </div>
@@ -22,10 +22,13 @@
         </div>
         <div id="post">
           <img
-            src="{{ postPic + post.fileName }}"
+            src="{{post.fileUrl}}"
             alt=""
             *ngIf="!post.videoFile"
           />
+          <h1>
+            {{post|json}}
+          </h1>
           <video
             [src]="postPic + post.fileName"
             *ngIf="post.videoFile"

@@ -20,7 +20,7 @@
     <div class="data-container">
       <div *ngIf="show">
         <div class="data" *ngFor="let report of report">
-          <img src="{{ profilePicRetrival + report.profilePhoto }}" />
+          <img src="{{report.profilePhoto }}" />
           <div class="name">
             <p>{{ report.userName }}</p>
           </div>
@@ -48,7 +48,7 @@
       </div>
       <div *ngIf="!show">
         <div class="data" *ngFor="let post of post">
-          <img class="post" src="{{ profilePicRetrival + post.fileName }}" />
+          <img class="post" src="{{post.fileName }}" />
           <div class="name">
             <p>{{ post.username }}</p>
           </div>

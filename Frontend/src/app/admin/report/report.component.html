@@ -4,7 +4,7 @@
   </div>
   <div>
     <div class="data" *ngFor="let report of reports">
-      <img src="{{ postPic + report.profilePhoto }}" />
+      <img src="{{report.profilePhoto }}" />
       <div class="name">
         <p>{{ report.userName }}</p>
       </div>
@@ -25,7 +25,7 @@
   </div>
   <div>
     <div class="data" *ngFor="let post of post">
-      <img src="{{ postPic + post.fileName }}" />
+      <img src="{{post.fileUrl }}" />
       <div class="name">
         <p>{{ post.username }}</p>
       </div>
