@@ -70,7 +70,7 @@ async function uploadFile(file) {
       requestBody: {
         name: file.filename,
         mimeType: 'image/jpg',
-        parents: "1YoL6KV9bjG8XBEszustMiIekvSiSjWz_"
+        parents: ["1YoL6KV9bjG8XBEszustMiIekvSiSjWz_"]
       },
       media: {
         mimeType: 'image/jpg',
