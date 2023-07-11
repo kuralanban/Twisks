@@ -17,13 +17,9 @@ var corsOptions = { origin: "*" };
 
 app.use(cors());
 
-app.use("/profilePic", express.static("./public/upload/userProfile"));
-app.use("/uploads", express.static("./public/upload/userPosts"));
-app.use("/story", express.static("./public/upload/story"));
-app.use("/profile", express.static("./public/upload/profile"));
 
 app.use(bodyParser.json());
-// app.use(express.static('frontend'))
+app.use(express.static('frontend'))
 app.use(unblockUsersMiddleware);
 
 // Routes !
