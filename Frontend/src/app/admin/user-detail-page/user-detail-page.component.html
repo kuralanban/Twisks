@@ -26,9 +26,6 @@
             alt=""
             *ngIf="!post.videoFile"
           />
-          <h1>
-            {{post|json}}
-          </h1>
           <video
             [src]="postPic + post.fileName"
             *ngIf="post.videoFile"
