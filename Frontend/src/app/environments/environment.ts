@@ -1,7 +1,6 @@
 export const environment={
   production: false,
-  // baseUrl:"https://twisks.onrender.com",
-  baseUrl:"  http://localhost:3000",
+  baseUrl:"https://twisks.onrender.com",
   profilePicRetrival:'https://twisks.onrender.com/',
   imgRetrivalPath: 'https://twisks.onrender.com/',
   userId:sessionStorage.getItem('userId'),
