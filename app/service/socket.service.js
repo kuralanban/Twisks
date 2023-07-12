@@ -50,7 +50,7 @@ console.log("like ulla vantan");
             likedBy: {
               userId: data.userId,
               likedByUsername: data.likedUsername,
-              likedPostImage: data.postImage,
+              likedPostImage: data.fileUrl,
             },
           },
         }
@@ -131,7 +131,7 @@ console.log("ithan :",retriveComments);
           commentedBy: data.userId,
           comment: data.comment,
           username: data.username,
-          postImage: data.postImage,
+          postImage: data.fileUrl,
         };
         const postComment = await commentModel.create(commentSchema);
 

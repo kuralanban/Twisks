@@ -32,7 +32,7 @@
 <div *ngIf="postDetail">
   <div class="container" *ngIf="!data.display">
     <div>
-      <img src="{{ postDetail.fileUrl }}" />
+      <img src="{{postDetail.fileUrl}}" />
       <p class="description">
         Are you sure to unblock <i>{{ postDetail.userName }}</i> ?
       </p>
@@ -47,7 +47,7 @@
 
   <div class="container" *ngIf="data.display">
     <div>
-      <img src="{{ profilePicRetrival + postDetail.fileName }}" />
+      <img src="{{postDetail.fileUrl }}" />
       <p class="description">
         Are you sure to Block <i>{{ postDetail.userName }}</i> ?
       </p>

@@ -13,8 +13,8 @@
       <div class="explore-item">
         <div class="image-wrapper" *ngFor="let exploreData of explore">
           <!-- {{exploreData.username}} -->
-           <img src="{{ imgRetrival + exploreData.fileName }}" alt="Explore Image 1" *ngIf="!exploreData.videoFile"/>
-          <video [src]="imgRetrival+exploreData.fileName" *ngIf="exploreData.videoFile" autoplay [muted]="true"></video>
+           <img src="{{exploreData.fileUrl}}" alt="Explore Image 1" *ngIf="!exploreData.videoFile"/>
+          <video [src]="exploreData.fileUrl" *ngIf="exploreData.videoFile" autoplay [muted]="true"></video>
 
           <div class="overlay">
             <button (click)="openImageDialog(exploreData)" class="like-button">
