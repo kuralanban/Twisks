@@ -7,7 +7,7 @@ import { SavedPostsComponent } from './saved-posts/saved-posts.component';
 import { AccessGuard } from '../service/Guard/access.guard';
 
 const routes: Routes = [
-  { path: '', component: HomepageComponent, canActivate: [AccessGuard], data: { title: 'Twisks | Home', description: 'Welcome to Twisks' } },
+  { path: '', component: HomepageComponent, canActivate: [AccessGuard], data: { title: 'Twisks | Home', description: 'naRedeythavarava' } },
   { path: 'createPost', component: CreatePostComponent, canActivate: [AccessGuard], data: { title: 'Twisks | Create Post', description: 'Create a new post' } },
   { path: 'viewPost/:id', component: ViewPostComponent, canActivate: [AccessGuard], data: { title: 'Twisks | View Post', description: 'View a post' } },
   { path: 'savedPosts', component: SavedPostsComponent, canActivate: [AccessGuard], data: { title: 'Twisks | Saved Posts', description: 'View your saved posts' } },
