@@ -11,40 +11,40 @@ const routes: Routes = [
       ),
   },
   {
-    path: '#/home',
+    path: 'home',
     loadChildren: () => import('./home/home.module').then((a) => a.HomeModule),
   },
   {
-    path: '#/profile',
+    path: 'profile',
     loadChildren: () =>
       import('./profile/profile.module').then((a) => a.ProfileModule),
   },
 
   {
-    path: '#/explore',
+    path: 'explore',
     loadChildren: () =>
       import('./explore/explore.module').then((e) => e.ExploreModule),
   },
 
   {
-    path: '#/admin',
+    path: 'admin',
     loadChildren: () =>
       import('./admin/admin.module').then((h) => h.AdminModule),
   },
   {
-    path: '#/search',
+    path: 'search',
     loadChildren: () =>
       import('./search/search.module').then((a) => a.SearchModule),
   },
   {
-    path: '#/notification',
+    path: 'notification',
     loadChildren: () =>
       import('./notification/notification.module').then(
         (h) => h.NotificationModule
       ),
   },
   {
-    path: '#/message',
+    path: 'message',
     loadChildren: () =>
       import('./message/message.module').then((m) => m.MessageModule),
   },
