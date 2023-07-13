@@ -1,7 +1,7 @@
 <div *ngIf="userRole!=null && userRole=='user'">
 <div class="nav">
   <div class="navTitles">
-    <img src="../../../assets/logo.png" alt="" id="logoImage">
+    <img src="../../../assets/logo.png" alt="twisks" id="logoImage">
     <h1 id="logo">Twisks</h1>
 
    <div (click)="routeToHome()">
@@ -37,7 +37,7 @@
     <!-- <mat-dialog-content></mat-dialog-content> -->
     <!-- <a href="profile/home/{{userId}}" id="profie"> -->
       <div class="profileDiv" (click)="routeToProfile()">
-      <img [src]="userDp" alt="" id="profilepic">
+      <img [src]="userDp" alt="twisks" id="profilepic">
       <strong id="profile">Profile</strong>
     </div>
     <!-- </a> -->
@@ -55,7 +55,7 @@
 <div *ngIf="userRole!=null && userRole=='admin'">
   <div class="container border  nav" >
     <div class="navAdmin p-3 my-5">
-      <img  src="../../../assets/logo.png" alt="" id="image">
+      <img  src="../../../assets/logo.png" alt="twisks" id="image">
       <h2 class ="name">Twisks</h2>
     </div>
     <div class=" center" >

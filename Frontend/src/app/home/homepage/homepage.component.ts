@@ -8,6 +8,8 @@ import { ReportComponent } from 'src/app/profile/report/report.component';
 import { HMemoriesComponent } from '../h-memories/h-memories.component';
 
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
+import { SeoService } from 'src/app/service/seo.service';
 
 @Component({
   selector: 'app-homepage',
@@ -19,7 +21,9 @@ export class HomepageComponent {
     public homeService: HomeService,
     private webSocket: WebsocketService,
     private matDialog: MatDialog,
-    private notification: MatSnackBar
+    private notification: MatSnackBar,
+    private route: ActivatedRoute,
+    private seoService: SeoService,
   ) {}
 
   public username: string='';
@@ -32,6 +36,7 @@ export class HomepageComponent {
   public userDp: string =sessionStorage.getItem('userDp')!;
 
   ngOnInit() {
+    this.setSeoData();
     this.fetchUserFollowingPosts();
     this.fetchUserProfileDetails();
     this.webSocket.connectSockets();
@@ -195,4 +200,11 @@ export class HomepageComponent {
       this.matDialog.closeAll();
     }, 8000);
   }
+  public setSeoData() {
+    const routeData = this.route.snapshot.data;
+    const title = routeData['title'] || 'Twisks | Home'; // Set a default title if necessary
+    const description = routeData['description'] || 'Welcome to Twisks'; // Set a default description if necessary
+    this.seoService.setSeoData(title, description);
+  }
+
 }

@@ -11,7 +11,7 @@
             favorite
           </span>{{post.likes}}
         </div>
-        <img src="{{post.fileUrl}}" alt="" (click)="viewPost(post)" *ngIf="!post.videoFile">
+        <img src="{{post.fileUrl}}" alt="twisks" (click)="viewPost(post)" *ngIf="!post.videoFile">
         <video [src]="post.fileUrl" *ngIf="post.videoFile" autoplay [muted]="true" (click)="viewPost(post)"></video>
     </div>
   </div>

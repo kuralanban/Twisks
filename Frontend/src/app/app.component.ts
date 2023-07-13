@@ -1,7 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { UserService } from './service/user.service';
-import { Router, NavigationEnd } from '@angular/router';
-
+import { Router, NavigationEnd ,ActivatedRoute} from '@angular/router';
+import { Meta, Title } from '@angular/platform-browser';
+import { filter, map, mergeMap } from 'rxjs/operators';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,10 +16,14 @@ export class AppComponent implements OnInit {
   constructor(
     private user: UserService,
     private route: Router,
+    private titleService: Title,
+    private metaService: Meta,
+    private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit() {
     this.toggleNavbar();
+
   }
 
   public toggleNavbar() {
@@ -33,5 +38,29 @@ export class AppComponent implements OnInit {
 
       }
     });
+  }
+ public seoSetters(){
+    this.route.events
+    .pipe(
+      filter((event) => event instanceof NavigationEnd),
+      map(() => this.activatedRoute),
+      map((route) => {
+        while (route.firstChild) {
+          route = route.firstChild;
+        }
+        return route;
+      }),
+      filter((route) => route.outlet === 'primary'),
+      mergeMap((route) => route.data)
+    )
+    .subscribe((data:any) => {
+      const pageTitle = data.title || 'Twisks'; // Set a default title if necessary
+      const pageDescription = data.description || 'Welcome to Twisks'; // Set a default description if necessary
+      this.setPageTitleAndDescription(pageTitle, pageDescription);
+    });
+  }
+ public setPageTitleAndDescription(title: string, description: string): void {
+    this.titleService.setTitle(title);
+    this.metaService.updateTag({ name: 'description', content: description });
   }
 }

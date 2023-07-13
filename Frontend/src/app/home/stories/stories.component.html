@@ -4,7 +4,7 @@
 
   <div class="story">
     <div (click)="openCreateStoryComponent()" class="post-story">
-    <img src="{{userDp}}"alt="" />
+    <img src="{{userDp}}"alt="twisks" />
     <span class="material-symbols-outlined " id="addStory"> add_circle </span>
     <br/>
     <small id="addStories">Add story</small>
@@ -17,7 +17,7 @@
   <div class="user-story "*ngFor="let user of storyDetails">
     <div class="view-story" (click)="openViewStoryComponent(user)" [class.viewed]="user.viewed" >
  <div  class="view-story"  >
-   <img src="{{user.userProfilePic ||homeService.defaultDp }}" alt=""  >
+   <img src="{{user.userProfilePic ||homeService.defaultDp }}" alt="twisks"  >
     <small>{{user.username}}</small>
     </div>
    </div>

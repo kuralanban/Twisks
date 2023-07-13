@@ -41,7 +41,7 @@
       <span class="notiTime" id="notiTime">{{this.homeService.calculateCurrentTime(noti.timestamp)}}</span>
     </div>
     <div>
-      <img src="{{imgRetrival+ noti.likedPostImage}}" alt="" id="notiImage" *ngIf="!noti.videoFile">
+      <img src="{{imgRetrival+ noti.likedPostImage}}" alt="twisks" id="notiImage" *ngIf="!noti.videoFile">
       <video [src]="imgRetrival+noti.likedPostImage" *ngIf="noti.videoFile" id="notiImage" pause></video>
     </div>
     </div>
@@ -63,7 +63,7 @@
       <span class="notiTime" id="notiTime">{{this.homeService.calculateCurrentTime(noti.createdAt)}}</span>
     </div>
     <div>
-      <img src="{{imgRetrival+ noti.postImage}}" alt="" id="notiImage" *ngIf="!noti.videoFile">
+      <img src="{{imgRetrival+ noti.postImage}}" alt="twisks" id="notiImage" *ngIf="!noti.videoFile">
       <video [src]="imgRetrival+noti.postImage" *ngIf="noti.videoFile" pause id="notiImage"></video>
 
     </div>
@@ -83,7 +83,7 @@
       <span style="color: rgb(181, 177, 177); font-weight: 600;"><a href="#">{{user.name}}</a> started following you.</span>
     </div>
     <div>
-      <img src="{{user.profilePhoto}}" alt="" srcset="">
+      <img src="{{user.profilePhoto}}" alt="twisks" srcset="">
     </div>
     </div>
     <div *ngIf="followerNotification.length==0" style="text-align: center;">
