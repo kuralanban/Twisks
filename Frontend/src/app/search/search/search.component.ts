@@ -83,6 +83,8 @@ export class SearchComponent implements OnInit {
     const routeData = this.route.snapshot.data;
     const title = routeData['title'];  // Set a default title if necessary
     const description = routeData['description'];// Set a default description if necessary
+    console.log(title,description);
+
     this.seoService.setSeoData(title, description);
   }
 }

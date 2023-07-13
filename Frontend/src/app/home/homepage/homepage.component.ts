@@ -201,10 +201,13 @@ export class HomepageComponent {
     }, 8000);
   }
   public setSeoData() {
-    const routeData = this.route.snapshot.data;
-    const title = routeData['title'] || 'Twisks | Home'; // Set a default title if necessary
-    const description = routeData['description'] || 'Welcome to Twisks'; // Set a default description if necessary
-    this.seoService.setSeoData(title, description);
-  }
+    this.route.data.subscribe(routeData => {
+      const title = routeData['title'];
+      const description = routeData['description'];
+      console.log(title, description);
 
+      this.seoService.setSeoData(title, description);
+    });
+
+}
 }
