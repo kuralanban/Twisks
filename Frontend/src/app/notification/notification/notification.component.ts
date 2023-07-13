@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { environment } from 'src/app/environments/environment';
 import { HomeService } from 'src/app/service/home.service';
 import { NotificationService } from 'src/app/service/notification.service';
+import { SeoService } from 'src/app/service/seo.service';
 @Component({
   selector: 'app-notification',
   templateUrl: './notification.component.html',
@@ -19,10 +21,13 @@ export class NotificationComponent implements OnInit {
 
   constructor(
     public notiService: NotificationService,
-    public homeService: HomeService
+    public homeService: HomeService,
+    private route: ActivatedRoute,
+    private seoService: SeoService,
   ) {}
 
   ngOnInit(): void {
+    this.setSeoData();
     this.getAllNotifications();
   }
 
@@ -63,4 +68,11 @@ export class NotificationComponent implements OnInit {
     this.showComments = false;
     this.showlikes = false;
   }
+  public setSeoData() {
+    const routeData = this.route.snapshot.data;
+    const title = routeData['title'] || 'Twisks | Home'; // Set a default title if necessary
+    const description = routeData['description'] || 'Welcome to Twisks'; // Set a default description if necessary
+    this.seoService.setSeoData(title, description);
+  }
+
 }

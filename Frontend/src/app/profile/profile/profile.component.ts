@@ -11,6 +11,7 @@ import { environment } from 'src/app/environments/environment';
 import { ViewPostComponent } from 'src/app/home/view-post/view-post.component';
 import { FollowService } from 'src/app/service/follow.service';
 import { WebsocketService } from 'src/app/service/websocket.service';
+import { SeoService } from 'src/app/service/seo.service';
 
 @Component({
   selector: 'app-profile',
@@ -34,7 +35,8 @@ export class ProfileComponent implements OnInit {
     public userService: UserService,
     public homeService: HomeService,
     public followService: FollowService,
-    private webSocket: WebsocketService
+    private webSocket: WebsocketService,
+    private seoService: SeoService,
   ) {}
   ngOnInit(): void {
     this.webSocket.connectSockets();
@@ -167,5 +169,11 @@ export class ProfileComponent implements OnInit {
       .subscribe(()=>{
         this.ngOnInit()
       });
+  }
+  public setSeoData() {
+    const routeData = this.route.snapshot.data;
+    const title = routeData['title'];  // Set a default title if necessary
+    const description = routeData['description'];// Set a default description if necessary
+    this.seoService.setSeoData(title, description);
   }
 }

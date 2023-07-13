@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/app/environments/environment';
+import { SeoService } from 'src/app/service/seo.service';
 import { UserService } from 'src/app/service/user.service';
 
 @Component({
@@ -15,8 +16,13 @@ export class SearchComponent implements OnInit {
   recentSearch: any;
   recentSearchUserDetails: any = [];
   public profilePicRetrival = environment.profilePicRetrival;
-  constructor(public userService: UserService, private router: Router) {}
+  constructor(public userService: UserService,
+     private router: Router,
+     private route: ActivatedRoute,
+     private seoService: SeoService,
+     ) {}
   ngOnInit(): void {
+    this.setSeoData();
     this.search = '';
     this.getRecentUserDetails();
   }
@@ -72,5 +78,11 @@ export class SearchComponent implements OnInit {
         this.ngOnInit();
       },
     });
+  }
+  public setSeoData() {
+    const routeData = this.route.snapshot.data;
+    const title = routeData['title'];  // Set a default title if necessary
+    const description = routeData['description'];// Set a default description if necessary
+    this.seoService.setSeoData(title, description);
   }
 }

@@ -6,6 +6,8 @@ import { ImageDialogComponent } from '../image-dialog/image-dialog.component';
 import { ViewPostComponent } from 'src/app/home/view-post/view-post.component';
 import { WebsocketService } from 'src/app/service/websocket.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
+import { SeoService } from 'src/app/service/seo.service';
 
 @Component({
   selector: 'app-explore',
@@ -18,7 +20,9 @@ export class ExploreComponent {
     public homeService: HomeService,
     public dialog: MatDialog,
     private websocket:WebsocketService,
-    private notification:MatSnackBar
+    private notification:MatSnackBar,
+    private router: ActivatedRoute,
+    private seoService: SeoService,
   ) {}
 
   public explore: any;
@@ -27,6 +31,7 @@ export class ExploreComponent {
 
 
   ngOnInit() {
+    this.setSeoData();
     this.websocket.connectSockets();
     this.exploreDetails();
     this.explore;
@@ -53,5 +58,10 @@ export class ExploreComponent {
       data: data,
     });
   }
-
+  public setSeoData() {
+    const routeData = this.router.snapshot.data;
+    const title = routeData['title'] || 'Twisks | Home'; // Set a default title if necessary
+    const description = routeData['description'] || 'Welcome to Twisks'; // Set a default description if necessary
+    this.seoService.setSeoData(title, description);
+  }
 }

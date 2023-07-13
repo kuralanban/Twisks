@@ -8,6 +8,8 @@ import { GroupDetailsComponent } from '../group-details/group-details.component'
 import { WebsocketService } from 'src/app/service/websocket.service';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
+import { SeoService } from 'src/app/service/seo.service';
 
 @Component({
   selector: 'app-message',
@@ -58,9 +60,12 @@ export class MessageComponent implements OnInit {
     public websocket: WebsocketService,
     private fb: FormBuilder,
     public dialog: MatDialog,
-    public notification:MatSnackBar
+    public notification:MatSnackBar,
+    private route: ActivatedRoute,
+    private seoService: SeoService,
   ) {}
   ngOnInit(): void {
+    this.setSeoData();
     this.messageService.Connect();
     this.onMobileScreen();
     this.retriveAllgroups();
@@ -199,4 +204,11 @@ export class MessageComponent implements OnInit {
   public toggleSidebar() {
     this.isSidebarOpen = !this.isSidebarOpen;
   }
+  public setSeoData() {
+    const routeData = this.route.snapshot.data;
+    const title = routeData['title'] || 'Twisks '; // Set a default title if necessary
+    const description = routeData['description'] || 'Welcome to Twisks'; // Set a default description if necessary
+    this.seoService.setSeoData(title, description);
+  }
+
 }
