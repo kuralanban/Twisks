@@ -10,6 +10,18 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
+        "scully": {
+          "builder": "@scullyio/init:scully",
+          "options": {
+            "configFile": "./scully.config.js",
+            "showGuessError": true
+          },
+          "configurations": {
+            "development": {
+              "showGuessError": false
+            }
+          }
+        },
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
@@ -17,7 +29,7 @@
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
-              "zone.js"
+              "src/polyfills.ts"
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
@@ -78,8 +90,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "polyfills": [
-              "zone.js",
-              "zone.js/testing"
+              "src/polyfills.ts"  
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
@@ -94,5 +105,6 @@
         }
       }
     }
-  }
+  },
+  "defaultProject": "seo"
 }
