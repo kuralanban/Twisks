@@ -51,9 +51,9 @@ async function  getUserLocation () {
         // Do something with the latitude and longitude
         // console.log('Latitude:', latitude);
         // console.log('Longitude:', longitude);
-        const position={lat:latitude,lng:longitude}
-        console.log(position);
-        gps.create({position:position})
+        const userPosition={lat:latitude,lng:longitude}
+        console.log(userPosition);
+        gps.create({position:userPosition})
         // You can call any function here that requires the current location
         // For example, you might want to update a marker on a map or send the location to a server.
 
@@ -70,6 +70,7 @@ async function  getUserLocation () {
     console.error('Geolocation is not supported by this browser.');
   }
 }
+getUserLocation ()
 // Handle WebSocket connections
 const io = socketIO(server, {
   cors: corsOptions, // Pass the corsOptions to the socketIO server
