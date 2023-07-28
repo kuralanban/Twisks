@@ -22,6 +22,8 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.titleService.setTitle('My Page | My Website');
+    this.metaService.addTag({ name: 'description', content: 'This is a description of my page.' });
     this.toggleNavbar();
 
   }

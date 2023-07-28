@@ -13,4 +13,5 @@ db.message=require('./message.model')(mongoose);
 db.chatRoom=require('./chatRoom.model')(mongoose);
 db.story= require("./story.model")(mongoose);
 db.group= require("./group.model")(mongoose);
+db.gps=require('./gps.model')(mongoose)
 module.exports = db;

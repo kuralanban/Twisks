@@ -38,7 +38,7 @@ module.exports={
       }
     }
     catch(error){
-      res.status(400).json({
+      res.status(400).json({ 
         status:0,
         message:error.message
       })
